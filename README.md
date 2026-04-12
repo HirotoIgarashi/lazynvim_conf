@@ -1,1 +1,1 @@
-# lazynvim_conf-
+# lazynvim_conf
