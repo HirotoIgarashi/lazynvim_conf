@@ -58,11 +58,14 @@ opt.autowrite = true -- Enable auto write
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically.
 opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus" -- Sync with system clipboard
+
+opt.colorcolumn = "80" -- 80文字目にラインを入れる
+
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.cursorline = true -- Enable highlighting of the current line
-opt.expandtab = true -- Use spaces instead of tabs
+opt.cursorline = true -- Enable highlighting of the current line カーソルがある行にハイライトを当ててくれます
+opt.expandtab = true -- Use spaces instead of tabs タブキーを入力時にタブを数文字分のスペースに置き換える
 opt.fillchars = {
   foldopen = "",
   foldclose = "",
@@ -75,7 +78,17 @@ opt.foldlevel = 99
 opt.foldmethod = "indent"
 opt.foldtext = ""
 opt.formatexpr = "v:lua.LazyVim.format.formatexpr()"
+
+-- j: 複数行のコメントを連結する際に余計なコメントリーダを消す
+-- c: 自動的にコメントを改行。自動的にコメントリーダを挿入する
+-- r: 新しい行が挿入されるコメントにおけるコメントリーダを挿入する
+-- o: 0やoを使用して新しい行が作られるコメントにおいてコメントリーダを挿入する
+-- q: gqコマンドでコメントをフォーマットする
+-- l:
+-- n:
+-- t:
 opt.formatoptions = "jcroqlnt" -- tcqj
+
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
@@ -93,7 +106,7 @@ opt.ruler = false -- Disable the default ruler
 opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
+opt.shiftwidth = 4 -- Size of an indent インデントを４文字分として表示する
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
@@ -106,8 +119,10 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]
-opt.tabstop = 2 -- Number of spaces tabs count for
+opt.tabstop = 4 -- Number of spaces tabs count for インデントのスペース幅を４文字分として表示する
 opt.termguicolors = true -- True color support
+
+opt.textwidth = 80 -- 挿入されるテキストの最大幅。長い行はこの幅を得るために空白の後に分割されます。
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.undofile = true
 opt.undolevels = 10000
@@ -115,7 +130,8 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = false -- Disable line wrap
+-- opt.wrap = false -- Disable line wrap
+opt.wrap = true -- enable line wrap ウィンドの幅より長い行が折り返され表示が次の行に続きます
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
