@@ -3,7 +3,7 @@
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-## 準備
+## LazyVimを使う準備
 
 ### nvimのインストール
 
@@ -17,6 +17,13 @@ chmod u+x nvim-linux-x86_64.appimage
 mkdir -p ~/.local/bin
 mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 nvim
+```
+
+### Rust環境のインストール
+
+```bash
+sudo apt install curl build-essential
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
 ### :checkhealth
