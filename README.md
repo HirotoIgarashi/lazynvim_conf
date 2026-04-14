@@ -19,6 +19,21 @@ mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 nvim
 ```
 
+### Node環境のインストール
+
+```bash
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
+nvm install lts
+nvm use lts
+```
+
+~/.config/fish/config.fishに
+
+```fish
+set -U nvm_default_version lts
+```
+
 ### Rust環境のインストール
 
 ```bash
