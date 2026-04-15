@@ -73,4 +73,69 @@ pip install --upgrade pynvim
 # :lazyExtraでprettierをインストールします。
 ```
 
+### Pythonの仮想環境について
+
+fish用
+
+```fish
+python3 -m venv ~/.venv
+source ~/.venv/bin/activate.fish
+.venv> pip install pylatexenc
+```
+
+```fish
+fisher install cuducos/dirvenv.fish
+```
+
 ### :LazyHealth
+
+- conform:
+  - conform.nvim report ~
+    - WARNING markdown-toc unavailable: Condition failed
+    - WARNING markdownlint-cli2 unavailable: Condition failed
+    - WARNING prettier unavailable: Condition failed
+- lazy:
+  - luarocks ~
+    - WARNING `lua` version `5.1` needed, but found `Lua 5.5.0  Copyright (C) 1994-2025 Lua.org, PUC-Rio`
+    - WARNING {lua5.1} or {lua} or {lua-5.1} version `5.1` not installed
+- mason.nvim [Language]
+  - WARNING Go: not available
+  - WARNING Ruby: not available
+  - WARNING RubyGem: not available
+  - WARNING Composer: not available
+  - WARNING PHP: not available
+  - WARNING javac: not available
+  - WARNING java: not available
+  - WARNING julia: not available
+- render-markdown.nvim [latex]
+  - [x] WARNING none installed: { "utftex", "latex2text" }
+
+    Pythonの仮想環境でpip install pylatexencとすることでWARNINGがでなくなる
+
+- Snacks.image
+  - WARNING setup {disabled}
+  - WARNING Missing Treesitter languages: `norg`
+  - WARNING Image rendering in docs with missing treesitter parsers won't work
+- Snacks.statuscolumn
+  - WARNING setup {disabled}
+- vim.lsp: Enabled Configurations
+  - WARNING Unknown filetype 'markdown.mdx' (Hint: filename extension != filetype).
+  - WARNING Unknown filetype 'javascript.jsx' (Hint: filename extension != filetype).
+  - WARNING Unknown filetype 'typescript.tsx' (Hint: filename extension != filetype).
+- vim.provider:
+  - Perl provider (optional) ~
+    - WARNING "Neovim::Ext" cpan module is not installed
+    - WARNING No usable perl executable found
+  - Python 3 provider (optional) ~
+    - WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
+    - WARNING Could not load Python :
+  - Ruby provider (optional) ~
+    - WARNING `ruby` and `gem` must be in $PATH.
+- which-key:
+  - checking for overlapping keymaps ~
+    - WARNING In mode `n`, <g> overlaps with <gx>, <g%>, <g[>, <g]>, <gri>, <gra>, <grn>, <grt>, <grr>, <grx>, <gc>, <gcO>, <gcc>, <gco>, <gO>:
+    - WARNING In mode `x`, <i> overlaps with <il>, <ii>, <in>:
+    - WARNING In mode `x`, <a> overlaps with <a%>, <al>, <ai>, <an>:
+    - WARNING In mode `o`, <i> overlaps with <il>, <ii>, <in>:
+    - WARNING In mode `o`, <a> overlaps with <al>, <ai>, <an>:
+    - WARNING In mode `n`, <gc> overlaps with <gcO>, <gcc>, <gco>:
