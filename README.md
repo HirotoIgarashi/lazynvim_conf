@@ -106,29 +106,79 @@ fisher install cuducos/dirvenv.fish
       ```
 
 - mason.nvim [Language]
-  - WARNING Go: not available
-  - WARNING Ruby: not available
-  - WARNING RubyGem: not available
-  - WARNING Composer: not available
-  - WARNING PHP: not available
-  - WARNING javac: not available
-  - WARNING java: not available
-  - WARNING julia: not available
+  - [x] WARNING Go: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S go
+  ```
+
+  - [x] WARNING Ruby: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S ruby
+  ```
+
+  - [x] WARNING RubyGem: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S ruby rubygems
+  ```
+
+  - [x] WARNING Composer: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S composer
+  ```
+
+  - [x] WARNING PHP: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -Syu php
+  ```
+
+  - [x] WARNING javac: not available
+
+    ```fish
+    sudo pacman -Syu
+    sudo pacman -S jdk-openjdk
+    ```
+
+  - [x] WARNING java: not available
+
+  javacをインストールしたら解決したらしい
+  - [x] WARNING julia: not available
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S julia
+  ```
+
 - render-markdown.nvim [latex]
   - [x] WARNING none installed: { "utftex", "latex2text" }
 
     Pythonの仮想環境でpip install pylatexencとすることでWARNINGがでなくなる
 
 - Snacks.image
-  - WARNING setup {disabled}
+  - [x] WARNING setup {disabled}
+
+    pluginsにsnacks.luaを追加してimage = { enabled = true },の行を追加するとWARNINGがでなくなる
+
   - [x] WARNING Missing Treesitter languages: `norg`
 
-    pluginにneorg.luaを追加することでWARNINGがでなくなる
+    pluginsにneorg.luaを追加することでWARNINGがでなくなる
 
   - WARNING Image rendering in docs with missing treesitter parsers won't work
 
 - Snacks.statuscolumn
-  - WARNING setup {disabled}
+  - [x] WARNING setup {disabled}
+
+    pluginsにsnacks.luaを追加してstatuscolumn = { enabled = true },の行を追加するとWARNINGがでなくなる
+
 - vim.lsp: Enabled Configurations
   - WARNING Unknown filetype 'markdown.mdx' (Hint: filename extension != filetype).
   - WARNING Unknown filetype 'javascript.jsx' (Hint: filename extension != filetype).
