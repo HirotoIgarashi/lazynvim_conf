@@ -30,6 +30,8 @@ nvm install latest
 nvm use latest
 ```
 
+以下の記述はnodejsとnpmをインストールすることで不要になった
+
 ~/.config/fish/config.fishに
 
 ```fish
@@ -96,8 +98,13 @@ fisher install cuducos/dirvenv.fish
     - WARNING prettier unavailable: Condition failed
 - lazy:
   - luarocks ~
-    - WARNING `lua` version `5.1` needed, but found `Lua 5.5.0  Copyright (C) 1994-2025 Lua.org, PUC-Rio`
-    - WARNING {lua5.1} or {lua} or {lua-5.1} version `5.1` not installed
+    - [x] WARNING `lua` version `5.1` needed, but found `Lua 5.5.0  Copyright (C) 1994-2025 Lua.org, PUC-Rio`
+    - [x] WARNING {lua5.1} or {lua} or {lua-5.1} version `5.1` not installed
+
+      ```fish
+      sudo pacman -S lua51
+      ```
+
 - mason.nvim [Language]
   - WARNING Go: not available
   - WARNING Ruby: not available
@@ -114,8 +121,12 @@ fisher install cuducos/dirvenv.fish
 
 - Snacks.image
   - WARNING setup {disabled}
-  - WARNING Missing Treesitter languages: `norg`
+  - [x] WARNING Missing Treesitter languages: `norg`
+
+    pluginにneorg.luaを追加することでWARNINGがでなくなる
+
   - WARNING Image rendering in docs with missing treesitter parsers won't work
+
 - Snacks.statuscolumn
   - WARNING setup {disabled}
 - vim.lsp: Enabled Configurations
@@ -127,10 +138,18 @@ fisher install cuducos/dirvenv.fish
     - WARNING "Neovim::Ext" cpan module is not installed
     - WARNING No usable perl executable found
   - Python 3 provider (optional) ~
-    - WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
-    - WARNING Could not load Python :
+    - `g:python3_host_prog` is not set. Searching for pynvim-python in the environment.
+    - [x] WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
+
+      ```fish
+      pip3 install pynvim
+      ```
+
+    - [x] WARNING Could not load Python :
+
   - Ruby provider (optional) ~
     - WARNING `ruby` and `gem` must be in $PATH.
+
 - which-key:
   - checking for overlapping keymaps ~
     - WARNING In mode `n`, <g> overlaps with <gx>, <g%>, <g[>, <g]>, <gri>, <gra>, <grn>, <grt>, <grr>, <grx>, <gc>, <gcO>, <gcc>, <gco>, <gO>:
