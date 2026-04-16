@@ -188,7 +188,14 @@ fisher install cuducos/dirvenv.fish
     - WARNING "Neovim::Ext" cpan module is not installed
     - WARNING No usable perl executable found
   - Python 3 provider (optional) ~
-    - `g:python3_host_prog` is not set. Searching for pynvim-python in the environment.
+    - [x] `g:python3_host_prog` is not set. Searching for pynvim-python in the environment.
+
+~/.config/nvim/lua/config/options.luaに以下の行を追加する
+
+```lua
+vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
+```
+
     - [x] WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
 
       ```fish
@@ -197,8 +204,23 @@ fisher install cuducos/dirvenv.fish
 
     - [x] WARNING Could not load Python :
 
-  - Ruby provider (optional) ~
-    - WARNING `ruby` and `gem` must be in $PATH.
+- Ruby provider (optional) ~
+  - [x] WARNING `ruby` and `gem` must be in $PATH.
+
+  ```fish
+  sudo pacman -Syu
+  sudo pacman -S ruby
+  ```
+
+  ```fish
+  gem install neovim
+  ```
+
+  ~/.config/fish/config.fishに以下の行を追加します
+
+  ```fish
+  set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
+  ```
 
 - which-key:
   - checking for overlapping keymaps ~
