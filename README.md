@@ -136,10 +136,10 @@ fisher install cuducos/dirvenv.fish
 
   - [x] WARNING PHP: not available
 
-  ```fish
-  sudo pacman -Syu
-  sudo pacman -Syu php
-  ```
+    ```fish
+    sudo pacman -Syu
+    sudo pacman -Syu php
+    ```
 
   - [x] WARNING javac: not available
 
@@ -153,10 +153,10 @@ fisher install cuducos/dirvenv.fish
   javacをインストールしたら解決したらしい
   - [x] WARNING julia: not available
 
-  ```fish
-  sudo pacman -Syu
-  sudo pacman -S julia
-  ```
+    ```fish
+    sudo pacman -Syu
+    sudo pacman -S julia
+    ```
 
 - render-markdown.nvim [latex]
   - [x] WARNING none installed: { "utftex", "latex2text" }
@@ -185,8 +185,20 @@ fisher install cuducos/dirvenv.fish
   - WARNING Unknown filetype 'typescript.tsx' (Hint: filename extension != filetype).
 - vim.provider:
   - Perl provider (optional) ~
-    - WARNING "Neovim::Ext" cpan module is not installed
-    - WARNING No usable perl executable found
+    - [x] WARNING "Neovim::Ext" cpan module is not installed
+
+    Neovim::Extをインストールするとバージョンが古いというメッセージに変わる。
+    - [x] WARNING No usable perl executable found
+
+      cpanminusをインストールして
+
+      ```fish
+      sudo /usr/bin/vendor_perl/cpanm -n Neovim::Ext
+      ```
+
+      perl executable: /usr/bin/perl
+      と出力されるので動作上は問題ないことにする
+
   - Python 3 provider (optional) ~
     - [x] `g:python3_host_prog` is not set. Searching for pynvim-python in the environment.
 
