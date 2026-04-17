@@ -137,3 +137,6 @@ opt.wrap = true -- enable line wrap ウィンドの幅より長い行が折り�
 vim.g.markdown_recommended_style = 0
 
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
+
+-- lua/config/options.lua
+vim.o.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]

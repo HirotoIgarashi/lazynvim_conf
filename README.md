@@ -1,3 +1,18 @@
+# 目次
+
+<!-- mtoc-start -->
+
+* [💤 LazyVim](#-lazyvim)
+  * [LazyVimを使う準備](#lazyvimを使う準備)
+    * [nvimのインストール](#nvimのインストール)
+    * [Node環境のインストール](#node環境のインストール)
+    * [Rust環境のインストール](#rust環境のインストール)
+    * [:checkhealth](#checkhealth)
+    * [Pythonの仮想環境について](#pythonの仮想環境について)
+    * [:LazyHealth](#lazyhealth)
+
+<!-- mtoc-end -->
+
 # 💤 LazyVim
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
