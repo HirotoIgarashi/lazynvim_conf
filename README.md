@@ -114,6 +114,8 @@ fisher install cuducos/dirvenv.fish
 
     lazyExtraでprettierをアンインストールすることで解消しました。
 
+##
+
 - lazy:
   - luarocks ~
     - [x] WARNING `lua` version `5.1` needed, but found `Lua 5.5.0  Copyright (C) 1994-2025 Lua.org, PUC-Rio`
