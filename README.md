@@ -1,11 +1,23 @@
-# 💤 LazyVim
+# 1. 💤 LazyVim
+
+<!-- mtoc-start -->
+
+* [1.1. LazyVimを使う準備](#11-lazyvimを使う準備)
+  * [1.1.1. nvimのインストール](#111-nvimのインストール)
+  * [1.1.2. Node環境のインストール](#112-node環境のインストール)
+  * [1.1.3. Rust環境のインストール](#113-rust環境のインストール)
+  * [1.1.4. :checkhealth](#114-checkhealth)
+  * [1.1.5. Pythonの仮想環境について](#115-pythonの仮想環境について)
+  * [1.1.6. :LazyHealth](#116-lazyhealth)
+
+<!-- mtoc-end -->
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-## LazyVimを使う準備
+## 1.1. LazyVimを使う準備
 
-### nvimのインストール
+### 1.1.1. nvimのインストール
 
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
@@ -19,7 +31,7 @@ mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 nvim
 ```
 
-### Node環境のインストール
+### 1.1.2. Node環境のインストール
 
 cachyOSの場合はnodejsとnpmをインストールします。
 
@@ -38,14 +50,14 @@ nvm use latest
 set -U nvm_default_version lts
 ```
 
-### Rust環境のインストール
+### 1.1.3. Rust環境のインストール
 
 ```bash
 sudo apt install curl build-essential
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-### :checkhealth
+### 1.1.4. :checkhealth
 
 ```fish
 mkdir -p ~/.config/nvim
@@ -75,7 +87,7 @@ pip install --upgrade pynvim
 # :lazyExtraでprettierをインストールします。
 ```
 
-### Pythonの仮想環境について
+### 1.1.5. Pythonの仮想環境について
 
 fish用
 
@@ -89,23 +101,21 @@ source ~/.venv/bin/activate.fish
 fisher install cuducos/dirvenv.fish
 ```
 
-### :LazyHealth
+### 1.1.6. :LazyHealth
 
 - conform:
-  - conform.nvim report ~
-    - WARNING markdown-toc unavailable: Condition failed
+  - conform.nvim report
+    - [ ] WARNING markdown-toc unavailable: Condition failed
+
+    - [ ] WARNING markdownlint-cli2 unavailable: Condition failed
 
     ```fish
-    npm install -g markdown-toc
+    sudo npm install -g markdown-toc markdownlint-cli2
     ```
 
-`````
-    - WARNING markdownlint-cli2 unavailable: Condition failed
     - [x] WARNING prettier unavailable: Condition failed
 
     lazyExtraでprettierをアンインストールすることで解消しました。
-
-##
 
 - lazy:
   - luarocks ~
@@ -119,17 +129,17 @@ fisher install cuducos/dirvenv.fish
 - mason.nvim [Language]
   - [x] WARNING Go: not available
 
-  ```fish
-  sudo pacman -Syu
-  sudo pacman -S go
-  ```
+    ```fish
+    sudo pacman -Syu
+    sudo pacman -S go
+    ```
 
   - [x] WARNING Ruby: not available
 
-  ```fish
-  sudo pacman -Syu
-  sudo pacman -S ruby
-  ```
+    ```fish
+    sudo pacman -Syu
+    sudo pacman -S ruby
+    ```
 
   - [x] WARNING RubyGem: not available
 
@@ -254,4 +264,7 @@ set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
     - WARNING In mode `o`, <i> overlaps with <il>, <ii>, <in>:
     - WARNING In mode `o`, <a> overlaps with <al>, <ai>, <an>:
     - WARNING In mode `n`, <gc> overlaps with <gcO>, <gcc>, <gco>:
-`````
+
+```
+
+```
