@@ -20,7 +20,7 @@ return {
         "yaml",
         "css",
         "latex",
-        "norg",
+        -- "norg",
         "scss",
         "svelte",
         "typst",

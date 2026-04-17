@@ -1,18 +1,3 @@
-# 目次
-
-<!-- mtoc-start -->
-
-* [💤 LazyVim](#-lazyvim)
-  * [LazyVimを使う準備](#lazyvimを使う準備)
-    * [nvimのインストール](#nvimのインストール)
-    * [Node環境のインストール](#node環境のインストール)
-    * [Rust環境のインストール](#rust環境のインストール)
-    * [:checkhealth](#checkhealth)
-    * [Pythonの仮想環境について](#pythonの仮想環境について)
-    * [:LazyHealth](#lazyhealth)
-
-<!-- mtoc-end -->
-
 # 💤 LazyVim
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
@@ -109,6 +94,12 @@ fisher install cuducos/dirvenv.fish
 - conform:
   - conform.nvim report ~
     - WARNING markdown-toc unavailable: Condition failed
+
+    ```fish
+    npm install -g markdown-toc
+    ```
+
+`````
     - WARNING markdownlint-cli2 unavailable: Condition failed
     - [x] WARNING prettier unavailable: Condition failed
 
@@ -263,3 +254,4 @@ set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
     - WARNING In mode `o`, <i> overlaps with <il>, <ii>, <in>:
     - WARNING In mode `o`, <a> overlaps with <al>, <ai>, <an>:
     - WARNING In mode `n`, <gc> overlaps with <gcO>, <gcc>, <gco>:
+`````
