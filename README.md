@@ -110,7 +110,10 @@ fisher install cuducos/dirvenv.fish
   - conform.nvim report ~
     - WARNING markdown-toc unavailable: Condition failed
     - WARNING markdownlint-cli2 unavailable: Condition failed
-    - WARNING prettier unavailable: Condition failed
+    - [x] WARNING prettier unavailable: Condition failed
+
+    lazyExtraでprettierをアンインストールすることで解消しました。
+
 - lazy:
   - luarocks ~
     - [x] WARNING `lua` version `5.1` needed, but found `Lua 5.5.0  Copyright (C) 1994-2025 Lua.org, PUC-Rio`
@@ -219,9 +222,10 @@ fisher install cuducos/dirvenv.fish
 
 ~/.config/nvim/lua/config/options.luaに以下の行を追加する
 
-```lua
+\*``lua
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
-```
+
+````
 
     - [x] WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
 
@@ -231,23 +235,23 @@ vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
 
     - [x] WARNING Could not load Python :
 
-- Ruby provider (optional) ~
+* Ruby provider (optional) ~
   - [x] WARNING `ruby` and `gem` must be in $PATH.
 
   ```fish
   sudo pacman -Syu
   sudo pacman -S ruby
-  ```
+````
 
-  ```fish
-  gem install neovim
-  ```
+```fish
+gem install neovim
+```
 
-  ~/.config/fish/config.fishに以下の行を追加します
+~/.config/fish/config.fishに以下の行を追加します
 
-  ```fish
-  set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
-  ```
+```fish
+set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
+```
 
 - which-key:
   - checking for overlapping keymaps ~
