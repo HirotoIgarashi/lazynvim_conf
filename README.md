@@ -6,9 +6,9 @@
   * [1.1.1. nvimのインストール](#111-nvimのインストール)
   * [1.1.2. Node環境のインストール](#112-node環境のインストール)
   * [1.1.3. Rust環境のインストール](#113-rust環境のインストール)
-  * [1.1.4. :checkhealth](#114-checkhealth)
+  * [1.1.4. `:checkhealth`](#114-checkhealth)
   * [1.1.5. Pythonの仮想環境について](#115-pythonの仮想環境について)
-  * [1.1.6. :LazyHealth](#116-lazyhealth)
+  * [1.1.6. `:LazyHealth`](#116-lazyhealth)
 
 <!-- mtoc-end -->
 
@@ -57,7 +57,7 @@ sudo apt install curl build-essential
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-### 1.1.4. :checkhealth
+### 1.1.4. `:checkhealth`
 
 ```fish
 mkdir -p ~/.config/nvim
@@ -101,7 +101,7 @@ source ~/.venv/bin/activate.fish
 fisher install cuducos/dirvenv.fish
 ```
 
-### 1.1.6. :LazyHealth
+### 1.1.6. `:LazyHealth`
 
 - conform:
   - conform.nvim report
@@ -225,12 +225,14 @@ fisher install cuducos/dirvenv.fish
 
 ~/.config/nvim/lua/config/options.luaに以下の行を追加する
 
-\*``lua
+```lua
 vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
+```
 
 ````
 
-    - [x] WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
+    - [x] WARNING No Python executable found that can `import neovim`. Using\
+the first available executable for diagnostics.
 
       ```fish
       pip3 install pynvim
