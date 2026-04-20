@@ -266,7 +266,3 @@ set PATH /home/hiroto/.local/share/gem/ruby/3.4.0/bin/ $PATH
     - WARNING In mode `o`, <i> overlaps with <il>, <ii>, <in>:
     - WARNING In mode `o`, <a> overlaps with <al>, <ai>, <an>:
     - WARNING In mode `n`, <gc> overlaps with <gcO>, <gcc>, <gco>:
-
-```
-
-```
