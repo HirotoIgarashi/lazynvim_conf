@@ -141,3 +141,9 @@ vim.g.python3_host_prog = vim.fn.expand("~/.venv/bin/python3")
 
 -- lua/config/options.lua
 vim.o.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]
+
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+vim.g.lazyvim_python_lsp = "pyright"
+-- Set to "ruff_lsp" to use the old LSP implementation version.
+vim.g.lazyvim_python_ruff = "ruff"
