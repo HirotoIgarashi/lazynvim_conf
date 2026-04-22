@@ -5,15 +5,28 @@
   * [1.2. 高度な編集](#12-高度な編集)
   * [1.3. 検索](#13-検索)
   * [1.4. 大きなサイズのテキストの編集および複数ファイルの編集](#14-大きなサイズのテキストの編集および複数ファイルの編集)
-* [1.5. Vimの詳細](#15-vimの詳細)
-* [2. 💤 LazyVim](#2--lazyvim)
-  * [2.1. LazyVimを使う準備](#21-lazyvimを使う準備)
-    * [2.1.1. nvimのインストール](#211-nvimのインストール)
-    * [2.1.2. Node環境のインストール](#212-node環境のインストール)
-    * [2.1.3. Rust環境のインストール](#213-rust環境のインストール)
-    * [2.1.4. `:checkhealth`](#214-checkhealth)
-    * [2.1.5. Pythonの仮想環境について](#215-pythonの仮想環境について)
-    * [2.1.6. `:LazyHealth`](#216-lazyhealth)
+  * [1.5. 複数のウィンドウの扱い](#15-複数のウィンドウの扱い)
+  * [1.6. 基本的なビジュアルモード](#16-基本的なビジュアルモード)
+  * [1.7. プログラマ向けコマンド](#17-プログラマ向けコマンド)
+  * [1.8. 基本的な略語、キーボード割り当て、初期設定ファイル](#18-基本的な略語キーボード割り当て初期設定ファイル)
+  * [1.9. 基本的なコマンドモードの操作](#19-基本的なコマンドモードの操作)
+  * [1.10. GUIの基本的使い方](#110-guiの基本的使い方)
+  * [1.11. テキストファイルの使い方](#111-テキストファイルの使い方)
+  * [1.12. 自動完了](#112-自動完了)
+  * [1.13. オートコマンド](#113-オートコマンド)
+  * [1.14. ファイル回復とコマンドライン引数](#114-ファイル回復とコマンドライン引数)
+  * [1.15. その他のコマンド](#115-その他のコマンド)
+  * [1.16. 操作方法](#116-操作方法)
+  * [1.17. 本書で分類されていないトピックス](#117-本書で分類されていないトピックス)
+* [2. Vimの詳細](#2-vimの詳細)
+* [3. 💤 LazyVim](#3--lazyvim)
+  * [3.1. LazyVimを使う準備](#31-lazyvimを使う準備)
+    * [3.1.1. nvimのインストール](#311-nvimのインストール)
+    * [3.1.2. Node環境のインストール](#312-node環境のインストール)
+    * [3.1.3. Rust環境のインストール](#313-rust環境のインストール)
+    * [3.1.4. `:checkhealth`](#314-checkhealth)
+    * [3.1.5. Pythonの仮想環境について](#315-pythonの仮想環境について)
+    * [3.1.6. `:LazyHealth`](#316-lazyhealth)
 
 <!-- mtoc-end -->
 
@@ -27,16 +40,42 @@
 
 ## 1.4. 大きなサイズのテキストの編集および複数ファイルの編集
 
-# 1.5. Vimの詳細
+## 1.5. 複数のウィンドウの扱い
 
-# 2. 💤 LazyVim
+## 1.6. 基本的なビジュアルモード
+
+## 1.7. プログラマ向けコマンド
+
+## 1.8. 基本的な略語、キーボード割り当て、初期設定ファイル
+
+## 1.9. 基本的なコマンドモードの操作
+
+## 1.10. GUIの基本的使い方
+
+## 1.11. テキストファイルの使い方
+
+## 1.12. 自動完了
+
+## 1.13. オートコマンド
+
+## 1.14. ファイル回復とコマンドライン引数
+
+## 1.15. その他のコマンド
+
+## 1.16. 操作方法
+
+## 1.17. 本書で分類されていないトピックス
+
+# 2. Vimの詳細
+
+# 3. 💤 LazyVim
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-## 2.1. LazyVimを使う準備
+## 3.1. LazyVimを使う準備
 
-### 2.1.1. nvimのインストール
+### 3.1.1. nvimのインストール
 
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
@@ -50,7 +89,7 @@ mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 nvim
 ```
 
-### 2.1.2. Node環境のインストール
+### 3.1.2. Node環境のインストール
 
 cachyOSの場合はnodejsとnpmをインストールします。
 
@@ -69,14 +108,14 @@ nvm use latest
 set -U nvm_default_version lts
 ```
 
-### 2.1.3. Rust環境のインストール
+### 3.1.3. Rust環境のインストール
 
 ```bash
 sudo apt install curl build-essential
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-### 2.1.4. `:checkhealth`
+### 3.1.4. `:checkhealth`
 
 ```fish
 mkdir -p ~/.config/nvim
@@ -106,7 +145,7 @@ pip install --upgrade pynvim
 # :lazyExtraでprettierをインストールします。
 ```
 
-### 2.1.5. Pythonの仮想環境について
+### 3.1.5. Pythonの仮想環境について
 
 fish用
 
@@ -120,7 +159,7 @@ source ~/.venv/bin/activate.fish
 fisher install cuducos/dirvenv.fish
 ```
 
-### 2.1.6. `:LazyHealth`
+### 3.1.6. `:LazyHealth`
 
 - conform:
   - conform.nvim report
