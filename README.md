@@ -1,23 +1,42 @@
-# 1. 💤 LazyVim
-
 <!-- mtoc-start -->
 
-* [1.1. LazyVimを使う準備](#11-lazyvimを使う準備)
-  * [1.1.1. nvimのインストール](#111-nvimのインストール)
-  * [1.1.2. Node環境のインストール](#112-node環境のインストール)
-  * [1.1.3. Rust環境のインストール](#113-rust環境のインストール)
-  * [1.1.4. `:checkhealth`](#114-checkhealth)
-  * [1.1.5. Pythonの仮想環境について](#115-pythonの仮想環境について)
-  * [1.1.6. `:LazyHealth`](#116-lazyhealth)
+* [1. Vimのチュートリアル](#1-vimのチュートリアル)
+  * [1.1. 編集の基本](#11-編集の基本)
+  * [1.2. 高度な編集](#12-高度な編集)
+  * [1.3. 検索](#13-検索)
+  * [1.4. 大きなサイズのテキストの編集および複数ファイルの編集](#14-大きなサイズのテキストの編集および複数ファイルの編集)
+* [1.5. Vimの詳細](#15-vimの詳細)
+* [2. 💤 LazyVim](#2--lazyvim)
+  * [2.1. LazyVimを使う準備](#21-lazyvimを使う準備)
+    * [2.1.1. nvimのインストール](#211-nvimのインストール)
+    * [2.1.2. Node環境のインストール](#212-node環境のインストール)
+    * [2.1.3. Rust環境のインストール](#213-rust環境のインストール)
+    * [2.1.4. `:checkhealth`](#214-checkhealth)
+    * [2.1.5. Pythonの仮想環境について](#215-pythonの仮想環境について)
+    * [2.1.6. `:LazyHealth`](#216-lazyhealth)
 
 <!-- mtoc-end -->
+
+# 1. Vimのチュートリアル
+
+## 1.1. 編集の基本
+
+## 1.2. 高度な編集
+
+## 1.3. 検索
+
+## 1.4. 大きなサイズのテキストの編集および複数ファイルの編集
+
+# 1.5. Vimの詳細
+
+# 2. 💤 LazyVim
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-## 1.1. LazyVimを使う準備
+## 2.1. LazyVimを使う準備
 
-### 1.1.1. nvimのインストール
+### 2.1.1. nvimのインストール
 
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
@@ -31,7 +50,7 @@ mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 nvim
 ```
 
-### 1.1.2. Node環境のインストール
+### 2.1.2. Node環境のインストール
 
 cachyOSの場合はnodejsとnpmをインストールします。
 
@@ -50,14 +69,14 @@ nvm use latest
 set -U nvm_default_version lts
 ```
 
-### 1.1.3. Rust環境のインストール
+### 2.1.3. Rust環境のインストール
 
 ```bash
 sudo apt install curl build-essential
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-### 1.1.4. `:checkhealth`
+### 2.1.4. `:checkhealth`
 
 ```fish
 mkdir -p ~/.config/nvim
@@ -87,7 +106,7 @@ pip install --upgrade pynvim
 # :lazyExtraでprettierをインストールします。
 ```
 
-### 1.1.5. Pythonの仮想環境について
+### 2.1.5. Pythonの仮想環境について
 
 fish用
 
@@ -101,7 +120,7 @@ source ~/.venv/bin/activate.fish
 fisher install cuducos/dirvenv.fish
 ```
 
-### 1.1.6. `:LazyHealth`
+### 2.1.6. `:LazyHealth`
 
 - conform:
   - conform.nvim report
