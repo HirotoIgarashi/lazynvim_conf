@@ -54,9 +54,31 @@ vim.g.trouble_lualine = true
 
 local opt = vim.opt
 
+opt.expandtab = true -- Use spaces instead of tabs タブキーを入力時にタブを数文字分のスペースに置き換える
+opt.shiftwidth = 4 -- Size of an indent インデントを４文字分として表示する
+opt.tabstop = 4 -- Number of spaces tabs count for インデントのスペース幅を４文字分として表示する
+opt.softtabstop = 4 -- how many spaces when prassing tab
+
+-- indentation options
+opt.smarttab = true
+opt.smartindent = true -- Insert indents automatically
+opt.autoindent = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+opt.list = true -- Show some invisible characters (tabs...
+opt.listchars = {
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
+  extends = "…",
+}
+
 opt.autowrite = true -- Enable auto write
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically.
+
+opt.breakindent = true -- Enable break indent
+
 opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus" -- Sync with system clipboard
 
 opt.colorcolumn = "80" -- 80文字目にラインを入れる
@@ -65,7 +87,6 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line カーソルがある行にハイライトを当ててくれます
-opt.expandtab = true -- Use spaces instead of tabs タブキーを入力時にタブを数文字分のスペースに置き換える
 opt.fillchars = {
   foldopen = "",
   foldclose = "",
@@ -92,27 +113,31 @@ opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
-opt.inccommand = "nosplit" -- preview incremental substitute
+
+-- opt.inccommand = "nosplit" -- preview incremental substitute
+opt.inccommand = "split" -- Preview substitutions live, as you type!
+
 opt.jumpoptions = "view"
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
-opt.list = true -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.relativenumber = true -- Relative line numbers
 opt.ruler = false -- Disable the default ruler
-opt.scrolloff = 4 -- Lines of context
+
+-- opt.scrolloff = 4 -- Lines of context
+opt.scrolloff = 10 -- Lines of context
+
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 4 -- Size of an indent インデントを４文字分として表示する
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+
 opt.smartcase = true -- Don't ignore case with capitals
-opt.smartindent = true -- Insert indents automatically
 opt.smoothscroll = true
 -- opt.spelllang = { "en" }
 opt.spelllang = { "en,cjk" }
@@ -120,7 +145,6 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]
-opt.tabstop = 4 -- Number of spaces tabs count for インデントのスペース幅を４文字分として表示する
 opt.termguicolors = true -- True color support
 
 opt.textwidth = 80 -- 挿入されるテキストの最大幅。長い行はこの幅を得るために空白の後に分割されます。
@@ -147,3 +171,17 @@ vim.o.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]
 vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
+
+--[[ Basic Autocommands ]]
+--See `:help lua-guide-autocommands`
+
+-- Highlight when yanking (copying) text
+-- Try it with `yap` in normal mode
+-- See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
